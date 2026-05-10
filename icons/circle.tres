@@ -1,0 +1,7 @@
+[gd_resource type="CanvasTexture" format=3 uid="uid://bmg2b2hnkapdb"]
+
+[ext_resource type="Texture2D" uid="uid://vslie8il6dj4" path="res://icons/circle.svg" id="1_crkdy"]
+
+[resource]
+diffuse_texture = ExtResource("1_crkdy")
+texture_filter = 4
