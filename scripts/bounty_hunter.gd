@@ -10,7 +10,7 @@ var tween: Tween
 @export var move_interval_high: float = 8
 @export var move_min := Vector2(-256, -144)
 @export var move_max := Vector2(256, 144)
-@export var move_length: float = 2
+@export var move_speed: float = 128
 
 @export_category("Size")
 @export var sprite_size: float = 512
@@ -38,9 +38,12 @@ func move_randomly() -> void:
 	if (tween):
 		tween.kill()
 	
+	var new_position := get_random_point_in_move_bounds()
+	var move_length := (new_position - position).length()
+	
 	tween = create_tween()
 	tween.tween_property(self, "current_size", move_size, resize_length).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC)
-	tween.tween_property(self, "position", get_random_point_in_move_bounds(), move_length).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_CUBIC)
+	tween.tween_property(self, "position", new_position, move_length / move_speed).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
 	tween.tween_property(self, "current_size", base_size, resize_length).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 
 func get_random_point_in_move_bounds() -> Vector2:
