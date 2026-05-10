@@ -23,6 +23,11 @@ Signals="*uid://tp72nvj8w8gn"
 
 gdscript/warnings/unused_signal=0
 
+[display]
+
+window/size/viewport_width=1024
+window/size/viewport_height=576
+
 [dotnet]
 
 project/assembly_name="GWJ IGC 2026"
