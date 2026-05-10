@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bw5mh02bjmjbo"]
+
+[ext_resource type="Script" uid="uid://divdhjalnotud" path="res://characters/bounty_hunter/bounty_hunter.gd" id="1_chn1h"]
+[ext_resource type="Texture2D" uid="uid://bmg2b2hnkapdb" path="res://characters/bounty_hunter/bounty_hunter.tres" id="2_ruypn"]
+
+[node name="BountyHunter" type="Node2D" unique_id=874562748]
+script = ExtResource("1_chn1h")
+move_interval_low = 5.0
+move_interval_high = 8.0
+move_min = Vector2(-16, -9)
+move_max = Vector2(16, 9)
+move_speed = 8.0
+sprite_size = 512.0
+base_size = 8.0
+move_size = 4.0
+resize_delay = 0.3
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1579287390]
+self_modulate = Color(1, 0, 0, 0.39215687)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ruypn")

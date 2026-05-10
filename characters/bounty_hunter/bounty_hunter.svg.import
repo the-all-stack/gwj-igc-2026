@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfrmckfk1qnvd"
-path="res://.godot/imported/stickmin.png-137d9c13677bfbc8ac7f3beb2d2fe490.ctex"
+uid="uid://vslie8il6dj4"
+path="res://.godot/imported/bounty_hunter.svg-dfde5b8027df0b798b442073cb2e2302.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://characters/stickmin.png"
-dest_files=["res://.godot/imported/stickmin.png-137d9c13677bfbc8ac7f3beb2d2fe490.ctex"]
+source_file="res://characters/bounty_hunter/bounty_hunter.svg"
+dest_files=["res://.godot/imported/bounty_hunter.svg-dfde5b8027df0b798b442073cb2e2302.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,3 +38,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false
