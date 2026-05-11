@@ -1,9 +1,13 @@
 @tool
 extends Node2D
 
-@onready var sprite: Sprite2D = $Sprite2D
-
 var tween: Tween
+
+@export_category("Visuals")
+@export var color: Color:
+	set(value):
+		color = value
+		queue_redraw()
 
 @export_category("Movement")
 @export var move_timer: float
@@ -14,18 +18,14 @@ var tween: Tween
 @export var move_speed: float
 
 @export_category("Size")
-@export var sprite_size: float:
-	set(value):
-		sprite_size = value
-		update_size()
 @export var current_size: float:
 	set(value):
 		current_size = value
-		update_size()
+		queue_redraw()
 @export var base_size: float:
 	set(value):
 		base_size = value
-		update_size()
+		queue_redraw()
 @export var move_size: float
 @export var resize_delay: float
 
@@ -33,7 +33,6 @@ func _ready() -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	update_size()
 	randomize_move_timer()
 	
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
@@ -67,9 +66,9 @@ func get_random_point_in_move_bounds() -> Vector2:
 func randomize_move_timer() -> void:
 	move_timer = randf_range(move_interval_low, move_interval_high)
 
-func update_size() -> void:
+func _draw() -> void:
 	if not is_node_ready():
 		return
-	
+
 	var size := base_size if Engine.is_editor_hint() else current_size
-	sprite.scale = size * Game.tile_size / sprite_size * Vector2.ONE
+	draw_circle(Vector2(), size * 0.5 * Game.tile_size, color)

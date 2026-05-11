@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://biq3wpw5eyc7d"]
+
+[ext_resource type="Script" uid="uid://b3ih3jqlceu64" path="res://characters/guard/guard.gd" id="1_lcryj"]
+[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_di0wq"]
+[ext_resource type="PackedScene" uid="uid://drs6duajjawyj" path="res://characters/guard/vision_cone/vision_cone.tscn" id="3_gdqd5"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hh1an"]
+radius = 4.0
+
+[sub_resource type="Curve2D" id="Curve2D_hh1an"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -352, 96, 0, 0, 0, 0, -16, 96, 0, 0, 0, 0, -16, -192, 0, 0, 0, 0, -352, -192, 0, 0, 0, 0, -352, 96)
+}
+point_count = 5
+
+[node name="Guard" type="Node2D" unique_id=939775326]
+script = ExtResource("1_lcryj")
+speed = 3.0
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1658555094]
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=840380114]
+texture = ExtResource("2_di0wq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1263337751]
+shape = SubResource("CircleShape2D_hh1an")
+
+[node name="VisionCone" parent="CharacterBody2D" unique_id=814579350 instance=ExtResource("3_gdqd5")]
+
+[node name="Path2D" type="Path2D" parent="." unique_id=1226265126]
+position = Vector2(352, -96)
+curve = SubResource("Curve2D_hh1an")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D" unique_id=579208614]
+position = Vector2(-352, 96)
+cubic_interp = false

@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://dj6p1ahuemyrc"]
 
 [ext_resource type="Script" uid="uid://crv6hoyc4fpsu" path="res://characters/player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/player/stickmin.tres" id="2_xxgcw"]
+[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_xxgcw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0uf1"]
-radius = 16.0
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=276129182]
 motion_mode = 1
