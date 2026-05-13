@@ -1,0 +1,160 @@
+[gd_scene format=3 uid="uid://dij1f64hc346j"]
+
+[ext_resource type="SpriteFrames" uid="uid://bfbgc0bicrl45" path="res://assets/sprites/change/change_sprite_frames.tres" id="1_g4pmx"]
+[ext_resource type="Script" uid="uid://wm74ivuxr63h" path="res://assets/sprites/animation_test_scene.gd" id="2_3tx5f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2som"]
+
+[node name="Node" type="Node" unique_id=27302102]
+
+[node name="Root" type="Node2D" parent="." unique_id=220079958]
+position = Vector2(512, 288)
+
+[node name="Camera2D" type="Camera2D" parent="Root" unique_id=1054854746]
+zoom = Vector2(2, 2)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="Root" unique_id=1987435659]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Root" unique_id=1759124278]
+unique_name_in_owner = true
+sprite_frames = ExtResource("1_g4pmx")
+animation = &"caught"
+
+[node name="AnimationTestScene" type="CanvasLayer" parent="." unique_id=12021721]
+script = ExtResource("2_3tx5f")
+
+[node name="Control" type="Control" parent="AnimationTestScene" unique_id=263509754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AnimationTestScene/Control" unique_id=2110817343]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=1948883726]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer" unique_id=1734121558]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer" unique_id=1817925352]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Change"
+popup/item_0/id = 0
+popup/item_1/text = "Citizen 01"
+popup/item_1/id = 1
+popup/item_2/text = "Citizen 02"
+popup/item_2/id = 2
+popup/item_3/text = "Guard"
+popup/item_3/id = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=742372118]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer3" unique_id=1190831022]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Animation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayed" type="OptionButton" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer3" unique_id=227990639]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Change"
+popup/item_0/id = 0
+popup/item_1/text = "Citizen 01"
+popup/item_1/id = 1
+popup/item_2/text = "Citizen 02"
+popup/item_2/id = 2
+popup/item_3/text = "Guard"
+popup/item_3/id = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=746868094]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2" unique_id=287039641]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Direction"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2" unique_id=1738938948]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=26690491]
+layout_mode = 2
+
+[node name="NorthWest" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1226881234]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "NW"
+
+[node name="West" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=71249842]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "W"
+
+[node name="SouthWest" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=396975551]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "SW"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=288092191]
+layout_mode = 2
+
+[node name="North" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=317791711]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "N"
+
+[node name="HSeparator" type="HSeparator" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=832618801]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="South" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1123040635]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "S"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1718719514]
+layout_mode = 2
+
+[node name="NorthEast" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=1427685586]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "NE"
+
+[node name="East" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=2136267313]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "E"
+
+[node name="SouthEast" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=1281666565]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "SE"
+
+[connection signal="item_selected" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer/OptionButton" to="AnimationTestScene" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer3/AnimationPlayed" to="AnimationTestScene" method="_on_animation_played_item_selected"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/NorthWest" to="AnimationTestScene" method="_on_north_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/West" to="AnimationTestScene" method="_on_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/SouthWest" to="AnimationTestScene" method="_on_south_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/North" to="AnimationTestScene" method="_on_north_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/South" to="AnimationTestScene" method="_on_south_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/NorthEast" to="AnimationTestScene" method="_on_north_east_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/East" to="AnimationTestScene" method="_on_east_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/SouthEast" to="AnimationTestScene" method="_on_south_east_pressed"]
