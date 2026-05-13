@@ -1,0 +1,174 @@
+[gd_scene format=4 uid="uid://dij1f64hc346j"]
+
+[ext_resource type="TileSet" uid="uid://bry0jy4v6kuus" path="res://assets/tilesets/tile_set_01.tres" id="1_3tx5f"]
+[ext_resource type="SpriteFrames" uid="uid://bfbgc0bicrl45" path="res://assets/sprites/change/change_sprite_frames.tres" id="1_g4pmx"]
+[ext_resource type="Script" uid="uid://wm74ivuxr63h" path="res://assets/sprites/animation_test_scene.gd" id="2_3tx5f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f2som"]
+
+[node name="Node" type="Node" unique_id=27302102]
+
+[node name="Root" type="Node2D" parent="." unique_id=220079958]
+position = Vector2(512, 288)
+
+[node name="Camera2D" type="Camera2D" parent="Root" unique_id=1054854746]
+zoom = Vector2(2, 2)
+
+[node name="Floor" type="TileMapLayer" parent="Root" unique_id=1987435659]
+tile_map_data = PackedByteArray("AAD+/wAAAAAAAAgAAAD//wAAAAAAAAgAAAAAAAAAAAAAAAgAAAABAAAAAAAAAAgAAAACAAAAAAAAAAgAAAACAAEAAAAAAAgAAAABAAEAAAAAAAgAAAAAAAEAAAAAAAgAAAD//wEAAAAAAAgAAAD+/wEAAAAAAAgAAAD9/wEAAAAAAAgAAAD8/wEAAAAAAAgAAAD7/wEAAAAAAAgAAAD6/wEAAAAAAAgAAAD6/wAAAAAAAAgAAAD7/wAAAAAAAAgAAAD8/wAAAAAAAAgAAAD9/wAAAAAAAAgAAAADAAAAAAAAAAgAAAAEAAAAAAAAAAgAAAAFAAAAAAAAAAgAAAAGAAAAAAAAAAgAAAAHAAAAAAAAAAgAAAAHAAEAAAAAAAgAAAAGAAEAAAAAAAgAAAAFAAEAAAAAAAgAAAAEAAEAAAAAAAgAAAADAAEAAAAAAAgAAAD5/wEAAAAAAAgAAAD4/wEAAAAAAAgAAAD4/wAAAAAAAAgAAAD5/wAAAAAAAAgAAAD4/wIAAAAAAAkAAAD4/wMAAAAAAAkAAAD4/wQAAAAAAAkAAAD5/wQAAAAAAAkAAAD6/wQAAAAAAAkAAAD5/wMAAAAAAAkAAAD5/wIAAAAAAAkAAAD6/wIAAAAAAAkAAAD7/wIAAAAAAAkAAAD7/wMAAAAAAAkAAAD6/wMAAAAAAAkAAAD7/wQAAAAAAAkAAAD8/wQAAAAAAAkAAAD8/wMAAAAAAAkAAAD9/wMAAAAAAAkAAAD+/wMAAAAAAAkAAAD//wMAAAAAAAkAAAAAAAMAAAAAAAkAAAABAAMAAAAAAAkAAAABAAQAAAAAAAkAAAAAAAQAAAAAAAkAAAD//wQAAAAAAAkAAAD+/wQAAAAAAAkAAAD9/wQAAAAAAAkAAAD8/wIAAAAAAAkAAAD9/wIAAAAAAAkAAAD+/wIAAAAAAAkAAAD//wIAAAAAAAkAAAAAAAIAAAAAAAkAAAABAAIAAAAAAAkAAAACAAIAAAAAAAkAAAADAAIAAAAAAAkAAAAEAAIAAAAAAAkAAAAFAAIAAAAAAAkAAAAGAAIAAAAAAAkAAAAHAAIAAAAAAAkAAAAHAAMAAAAAAAkAAAAHAAQAAAAAAAkAAAAGAAQAAAAAAAkAAAAFAAQAAAAAAAkAAAAEAAQAAAAAAAkAAAADAAQAAAAAAAkAAAACAAQAAAAAAAkAAAACAAMAAAAAAAkAAAADAAMAAAAAAAkAAAAEAAMAAAAAAAkAAAAFAAMAAAAAAAkAAAAGAAMAAAAAAAkAAAD4////AAAAAAcAAAD5////AAAAAAcAAAD6////AAAAAAcAAAD7////AAAAAAcAAAD8////AAAAAAcAAAD9////AAAAAAcAAAD+////AAAAAAcAAAD/////AAAAAAcAAAAAAP//AAAAAAcAAAABAP//AAAAAAcAAAACAP//AAAAAAcAAAADAP//AAAAAAcAAAAEAP//AAAAAAcAAAAFAP//AAAAAAcAAAAGAP//AAAAAAcAAAAHAP//AAAAAAcAAAAHAP7/AAAAAAcAAAAHAP3/AAAAAAcAAAAHAPz/AAAAAAcAAAAHAPv/AAAAAAcAAAAGAPv/AAAAAAcAAAAFAPv/AAAAAAcAAAAEAPv/AAAAAAcAAAADAPv/AAAAAAcAAAACAPv/AAAAAAcAAAABAPv/AAAAAAcAAAAAAPv/AAAAAAcAAAD///v/AAAAAAcAAAD+//v/AAAAAAcAAAD9//v/AAAAAAcAAAD8//v/AAAAAAcAAAD7//v/AAAAAAcAAAD6//v/AAAAAAcAAAD5//v/AAAAAAcAAAD4//v/AAAAAAcAAAD4//z/AAAAAAcAAAD4//3/AAAAAAcAAAD4//7/AAAAAAcAAAD5//z/AAAAAAcAAAD6//z/AAAAAAcAAAD7//z/AAAAAAcAAAD8//z/AAAAAAcAAAD9//z/AAAAAAcAAAD8//3/AAAAAAcAAAD7//3/AAAAAAcAAAD6//3/AAAAAAcAAAD5//3/AAAAAAcAAAD5//7/AAAAAAcAAAD6//7/AAAAAAcAAAD7//7/AAAAAAcAAAD8//7/AAAAAAcAAAD9//7/AAAAAAcAAAD+//7/AAAAAAcAAAD///7/AAAAAAcAAAAAAP7/AAAAAAcAAAABAP7/AAAAAAcAAAABAP3/AAAAAAcAAAAAAP3/AAAAAAcAAAD///3/AAAAAAcAAAD+//3/AAAAAAcAAAD9//3/AAAAAAcAAAAAAPz/AAAAAAcAAAABAPz/AAAAAAcAAAACAPz/AAAAAAcAAAD+//z/AAAAAAcAAAD///z/AAAAAAcAAAADAPz/AAAAAAcAAAAEAPz/AAAAAAcAAAAFAPz/AAAAAAcAAAAGAPz/AAAAAAcAAAADAP3/AAAAAAcAAAACAP3/AAAAAAcAAAAEAP3/AAAAAAcAAAAEAP7/AAAAAAcAAAAFAP7/AAAAAAcAAAAFAP3/AAAAAAcAAAAGAP3/AAAAAAcAAAAGAP7/AAAAAAcAAAADAP7/AAAAAAcAAAACAP7/AAAAAAcAAAA=")
+tile_set = ExtResource("1_3tx5f")
+
+[node name="FloorTrim" type="TileMapLayer" parent="Root" unique_id=283147315]
+tile_map_data = PackedByteArray("AAD4/wIAAAACAAkAADD5/wIAAAACAAkAADD6/wIAAAACAAkAADD7/wIAAAACAAkAADD8/wIAAAACAAkAADD9/wIAAAACAAkAADD+/wIAAAACAAkAADD//wIAAAACAAkAADAAAAIAAAACAAkAADABAAIAAAACAAkAADACAAIAAAACAAkAADADAAIAAAACAAkAADAEAAIAAAACAAkAADAFAAIAAAACAAkAADAGAAIAAAACAAkAADAHAAIAAAACAAkAADD4/wAAAAACAAgAADD5/wAAAAACAAgAADD6/wAAAAACAAgAADD7/wAAAAACAAgAADD8/wAAAAACAAgAADD9/wAAAAACAAgAADD+/wAAAAACAAgAADD//wAAAAACAAgAADAAAAAAAAACAAgAADABAAAAAAACAAgAADACAAAAAAACAAgAADADAAAAAAACAAgAADAEAAAAAAACAAgAADAFAAAAAAACAAgAADAGAAAAAAACAAgAADAHAAAAAAACAAgAADD4/wEAAAACAAgAAAD5/wEAAAACAAgAAAD6/wEAAAACAAgAAAD7/wEAAAACAAgAAAD8/wEAAAACAAgAAAD9/wEAAAACAAgAAAD+/wEAAAACAAgAAAD//wEAAAACAAgAAAAAAAEAAAACAAgAAAABAAEAAAACAAgAAAACAAEAAAACAAgAAAADAAEAAAACAAgAAAAEAAEAAAACAAgAAAAFAAEAAAACAAgAAAAGAAEAAAACAAgAAAAHAAEAAAACAAgAAAA=")
+tile_set = ExtResource("1_3tx5f")
+
+[node name="Walls" type="TileMapLayer" parent="Root" unique_id=1737635559]
+z_index = 2
+tile_map_data = PackedByteArray("AAD///7/AAACAAEAAAD/////AAACAAIAAAD+//7/AAAAAAEAAAD+////AAAAAAIAAAD9//7/AAAAAAEAAAD9////AAAAAAIAAAD8//7/AAACAAEAABD8////AAACAAIAABD7//7/AAABAAEAAAD7////AAABAAIAAAD6//7/AAACAAEAAAD6////AAACAAIAAAD5//7/AAAAAAEAAAD5////AAAAAAIAAAD4//7/AAAAAAEAAAD4////AAAAAAIAAAABAP7/AAACAAEAABABAP//AAACAAIAABACAP7/AAAAAAEAAAACAP//AAAAAAIAAAADAP7/AAACAAEAAAADAP//AAACAAIAAAAEAP7/AAACAAEAABAEAP//AAACAAIAABAFAP7/AAAAAAEAAAAFAP//AAAAAAIAAAAGAP7/AAAAAAEAAAAGAP//AAAAAAIAAAAHAP7/AAAAAAEAAAAHAP//AAAAAAIAAAAAAP7/AAABAAEAAAAAAP//AAABAAIAAAD4//3/AAABAAAAAAD5//3/AAABAAAAAAD6//3/AAABAAAAAAD7//3/AAABAAAAAAD8//3/AAABAAAAAAD9//3/AAABAAAAAAD+//3/AAABAAAAAAD///3/AAABAAAAAAAAAP3/AAABAAAAAAABAP3/AAABAAAAAAACAP3/AAABAAAAAAADAP3/AAABAAAAAAAEAP3/AAABAAAAAAAFAP3/AAABAAAAAAAGAP3/AAABAAAAAAAHAP3/AAABAAAAAAA=")
+tile_set = ExtResource("1_3tx5f")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Root" unique_id=881436695]
+unique_name_in_owner = true
+z_index = 3
+position = Vector2(16, 24)
+sprite_frames = ExtResource("1_g4pmx")
+animation = &"caught"
+
+[node name="AnimationTestScene" type="CanvasLayer" parent="." unique_id=12021721]
+script = ExtResource("2_3tx5f")
+
+[node name="Control" type="Control" parent="AnimationTestScene" unique_id=263509754]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AnimationTestScene/Control" unique_id=2110817343]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=1948883726]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer" unique_id=1734121558]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Character"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer" unique_id=1817925352]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Change"
+popup/item_0/id = 0
+popup/item_1/text = "Citizen 01"
+popup/item_1/id = 1
+popup/item_2/text = "Citizen 02"
+popup/item_2/id = 2
+popup/item_3/text = "Guard"
+popup/item_3/id = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=742372118]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer3" unique_id=1190831022]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Animation"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayed" type="OptionButton" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer3" unique_id=227990639]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 4
+popup/item_0/text = "Change"
+popup/item_0/id = 0
+popup/item_1/text = "Citizen 01"
+popup/item_1/id = 1
+popup/item_2/text = "Citizen 02"
+popup/item_2/id = 2
+popup/item_3/text = "Guard"
+popup/item_3/id = 3
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer" unique_id=746868094]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2" unique_id=287039641]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_f2som")
+text = "Direction"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2" unique_id=1738938948]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=26690491]
+layout_mode = 2
+
+[node name="NorthWest" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=1226881234]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "NW"
+
+[node name="West" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=71249842]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "W"
+
+[node name="SouthWest" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer" unique_id=396975551]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "SW"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=288092191]
+layout_mode = 2
+
+[node name="North" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=317791711]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "N"
+
+[node name="HSeparator" type="HSeparator" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=832618801]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="South" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2" unique_id=1123040635]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "S"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer" unique_id=1718719514]
+layout_mode = 2
+
+[node name="NorthEast" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=1427685586]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "NE"
+
+[node name="East" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=2136267313]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "E"
+
+[node name="SouthEast" type="Button" parent="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3" unique_id=1281666565]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+text = "SE"
+
+[connection signal="item_selected" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer/OptionButton" to="AnimationTestScene" method="_on_option_button_item_selected"]
+[connection signal="item_selected" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer3/AnimationPlayed" to="AnimationTestScene" method="_on_animation_played_item_selected"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/NorthWest" to="AnimationTestScene" method="_on_north_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/West" to="AnimationTestScene" method="_on_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer/SouthWest" to="AnimationTestScene" method="_on_south_west_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/North" to="AnimationTestScene" method="_on_north_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer2/South" to="AnimationTestScene" method="_on_south_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/NorthEast" to="AnimationTestScene" method="_on_north_east_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/East" to="AnimationTestScene" method="_on_east_pressed"]
+[connection signal="pressed" from="AnimationTestScene/Control/HBoxContainer/VBoxContainer2/HBoxContainer/VBoxContainer3/SouthEast" to="AnimationTestScene" method="_on_south_east_pressed"]
