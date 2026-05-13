@@ -27,12 +27,12 @@ func _draw() -> void:
 	var angle_rad := deg_to_rad(angle)
 	var radius_px := radius * Game.tile_size
 	var arc_length := angle * radius
-	
+
 	var points := PackedVector2Array()
-	points.resize(3 + arc_length / max(pixels_per_point, 1))
+	points.resize(3 + floori(arc_length) / maxi(pixels_per_point, 1))
 	for i in range(1, points.size()):
 		var progress := (float)(i - 1) / (points.size() - 2)
-		points[i] = Vector2.from_angle(lerp(-angle_rad * 0.5, angle_rad * 0.5, progress)) * radius_px
+		points[i] = Vector2.from_angle(lerpf(-angle_rad * 0.5, angle_rad * 0.5, progress)) * radius_px
 	
 	collision.polygon = points
 	draw_colored_polygon(points, color)
