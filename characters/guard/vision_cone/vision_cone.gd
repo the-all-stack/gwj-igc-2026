@@ -1,7 +1,7 @@
 @tool
-class_name VisionCone extends Node2D
+class_name VisionCone extends Area2D
 
-@onready var collision: CollisionPolygon2D = $Area2D/CollisionPolygon2D
+@onready var collision: CollisionPolygon2D = $CollisionPolygon2D
 
 @export var color: Color:
 	set(value):

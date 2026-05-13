@@ -6,10 +6,11 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0uf1"]
 radius = 4.0
 
-[node name="Player" type="CharacterBody2D" unique_id=276129182]
+[node name="Player" type="CharacterBody2D" unique_id=649499379]
 motion_mode = 1
 script = ExtResource("1_rkbax")
 speed = 5.0
+metadata/_custom_type_script = "uid://crv6hoyc4fpsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219478331]
 shape = SubResource("CircleShape2D_w0uf1")

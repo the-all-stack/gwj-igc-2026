@@ -1,5 +1,5 @@
 @tool
-extends Node2D
+class_name BountyHunter extends Node2D
 
 var tween: Tween
 
