@@ -2,10 +2,10 @@ extends CanvasLayer
 
 @onready var animated_sprite: AnimatedSprite2D = %AnimatedSprite2D
 @onready var character_option: OptionButton = %OptionButton
-@onready var animation_option: OptionButton = %AnimationPlayed # Your second OptionButton
+@onready var animation_option: OptionButton = %AnimationPlayed
 @onready var animation_played: OptionButton = %AnimationPlayed
 
-# Character Resources
+# Sprite Frame Resources
 const CHANGE_SPRITE_FRAMES = preload("uid://bfbgc0bicrl45")
 const CITIZEN_01_SPRITE_FRAMES = preload("uid://dp3135bp75j67")
 const CITIZEN_02_SPRITE_FRAMES = preload("uid://dl3302s7j81cr")
@@ -44,12 +44,11 @@ func _get_animations(sprite_frame_checked: SpriteFrames) -> Dictionary:
 func _update_animation_list() -> void:
 	animation_option.clear()
 	var keys: Array = animations_data.keys()
-	keys.sort() # Keep it tidy
+	keys.sort()
 	
 	for action: String in keys:
 		animation_option.add_item(action)
 	
-	# Set current base to whatever is first in the new character's list
 	if animation_option.item_count > 0:
 		_on_animation_played_item_selected(0)
 
@@ -65,12 +64,10 @@ func _play_dir_anim(dir_suffix: String) -> void:
 	if animated_sprite.sprite_frames.has_animation(target_anim):
 		animated_sprite.play(target_anim)
 	else:
-		# Fallback if the specific variant is missing
 		var names: PackedStringArray = animated_sprite.sprite_frames.get_animation_names()
 		if names.size() > 0:
 			animated_sprite.play(names[0])
 
-# --- Signal Connections ---
 
 func _on_option_button_item_selected(index: int) -> void:
 	match index:
@@ -88,7 +85,7 @@ func _on_option_button_item_selected(index: int) -> void:
 
 func _on_animation_played_item_selected(index: int) -> void:
 	current_base_anim = animation_option.get_item_text(index)
-	_play_dir_anim("s") # Default to North view when action changes
+	_play_dir_anim("s")
 
 # Directional Buttons
 func _on_north_west_pressed() -> void: _play_dir_anim("nw")
