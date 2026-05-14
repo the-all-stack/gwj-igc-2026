@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dvosbd3ppjhoo"]
+
+[ext_resource type="PackedScene" uid="uid://cxy1aywwc8tc2" path="res://hideout/wanted_poster.tscn" id="1_ydc02"]
+
+[node name="Hideout" type="Control" unique_id=1487997213]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=685137052]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.4, 0.4, 0.4, 1)
+
+[node name="WantedPoster1" parent="." unique_id=2085939734 instance=ExtResource("1_ydc02")]
+layout_mode = 0
+offset_left = 368.0
+offset_top = 144.0
+offset_right = 448.0
+offset_bottom = 264.0
+rotation = -0.08726646
+
+[node name="WantedPoster2" parent="." unique_id=1495616944 instance=ExtResource("1_ydc02")]
+layout_mode = 0
+offset_left = 560.0
+offset_top = 128.0
+offset_right = 640.0
+offset_bottom = 248.0
+rotation = 0.08726646
+
+[node name="WantedPoster3" parent="." unique_id=1487950007 instance=ExtResource("1_ydc02")]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 160.0
+offset_right = 848.0
+offset_bottom = 280.0
+rotation = -0.08726646

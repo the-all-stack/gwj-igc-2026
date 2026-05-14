@@ -10,7 +10,13 @@ radius = 4.0
 collision_layer = 5
 motion_mode = 1
 script = ExtResource("1_rkbax")
-speed = 5.0
+base_speed = 3.0
+sprint_speed = 6.0
+max_stamina = 100.0
+min_stamina_to_start_sprinting = 20.0
+stamina_usage_rate = 50.0
+stamina_regen_rate = 20.0
+stamina_regen_delay = 2.0
 metadata/_custom_type_script = "uid://crv6hoyc4fpsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219478331]
