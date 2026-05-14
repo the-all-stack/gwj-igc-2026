@@ -1,3 +1,4 @@
+@tool
 class_name Guard extends Node2D
 
 @onready var body: CharacterBody2D = $CharacterBody2D
@@ -5,17 +6,28 @@ class_name Guard extends Node2D
 @onready var path: Path2D = $Path2D
 @onready var follow: PathFollow2D = $Path2D/PathFollow2D
 
+@export_category("Movement")
 @export var patrol_speed: float
 @export var patrol_snap_distance: float
 @export var chase_speed: float
 @export var catch_distance: float
 
-var seen_player: Player
+@export_category("Visuals")
+@export var cone_color_unseen: Color:
+	set(value):
+		cone_color_unseen = value
+		if is_node_ready():
+			cone.color = value
+@export var cone_color_seen: Color
+
 var is_chasing_player: bool
 var last_known_player_position: Vector2
 var is_returning_to_patrol: bool
 
 func _physics_process(delta: float) -> void:
+	if Engine.is_editor_hint():
+		return
+	
 	if is_chasing_player:
 		chase(delta)
 	elif is_returning_to_patrol:
@@ -23,7 +35,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		patrol(delta)
 
-## Mvoes towards the target and returns the remaining speed budget.
+## Moves towards the target and returns the remaining speed budget.
 func move_toward_target(target: Vector2, speed: float, delta: float) -> float:
 	var velocity_error := (target - body.global_position) / delta
 	var max_speed_px := speed * Game.tile_size
@@ -51,7 +63,7 @@ func face_toward_target(target: Vector2) -> void:
 	cone.global_rotation = (target - body.global_position).angle()
 
 func chase(delta: float) -> void:
-	var target_position := seen_player.position if seen_player else last_known_player_position
+	var target_position := cone.seen_player.position if cone.seen_player else last_known_player_position
 
 	navigate_toward_target(target_position, chase_speed, delta, false)
 	face_toward_target(target_position)
@@ -71,12 +83,10 @@ func patrol(delta: float) -> void:
 	body.global_position = follow.global_position
 	cone.global_rotation = follow.global_rotation
 
-func _on_vision_cone_body_entered(body: Node2D) -> void:
-	if body is Player:
-		seen_player = body
-		is_chasing_player = true
+func _on_vision_cone_player_entered(player: Player) -> void:
+	is_chasing_player = true
+	cone.color = cone_color_seen
 
-func _on_vision_cone_body_exited(body: Node2D) -> void:
-	if body is Player:
-		seen_player = null
-		last_known_player_position = body.global_position
+func _on_vision_cone_player_exited(player: Player) -> void:
+	last_known_player_position = player.global_position
+	cone.color = cone_color_unseen

@@ -19,6 +19,8 @@ patrol_speed = 2.0
 patrol_snap_distance = 0.01
 chase_speed = 4.0
 catch_distance = 0.5
+cone_color_unseen = Color(1, 0, 0, 0.3137255)
+cone_color_seen = Color(1, 0, 0, 0.47058824)
 metadata/_custom_type_script = "uid://b3ih3jqlceu64"
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1658555094]
@@ -30,6 +32,7 @@ texture = ExtResource("2_di0wq")
 shape = SubResource("CircleShape2D_hh1an")
 
 [node name="VisionCone" parent="CharacterBody2D" unique_id=814579350 instance=ExtResource("3_gdqd5")]
+color = Color(1, 0, 0, 0.3137255)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=1226265126]
 position = Vector2(352, -96)
@@ -39,5 +42,5 @@ curve = SubResource("Curve2D_hh1an")
 position = Vector2(-352, 96)
 cubic_interp = false
 
-[connection signal="body_entered" from="CharacterBody2D/VisionCone" to="." method="_on_vision_cone_body_entered"]
-[connection signal="body_exited" from="CharacterBody2D/VisionCone" to="." method="_on_vision_cone_body_exited"]
+[connection signal="player_entered" from="CharacterBody2D/VisionCone" to="." method="_on_vision_cone_player_entered"]
+[connection signal="player_exited" from="CharacterBody2D/VisionCone" to="." method="_on_vision_cone_player_exited"]
