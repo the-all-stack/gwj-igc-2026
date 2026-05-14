@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://crv6hoyc4fpsu" path="res://characters/player/player.gd" id="1_rkbax"]
 [ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_xxgcw"]
+[ext_resource type="Script" uid="uid://wawymuwe6cc4" path="res://characters/player/stamina_bar.gd" id="3_exd8k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0uf1"]
 radius = 4.0
@@ -17,6 +18,8 @@ min_stamina_to_start_sprinting = 20.0
 stamina_usage_rate = 50.0
 stamina_regen_rate = 20.0
 stamina_regen_delay = 2.0
+stamina_bar_enabled_fill_color = Color(1, 1, 0.19607843, 1)
+stamina_bar_disabled_fill_color = Color(1, 0.19607843, 0.19607843, 1)
 metadata/_custom_type_script = "uid://crv6hoyc4fpsu"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219478331]
@@ -24,3 +27,11 @@ shape = SubResource("CircleShape2D_w0uf1")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1581721086]
 texture = ExtResource("2_xxgcw")
+
+[node name="StaminaBar" type="Node2D" parent="." unique_id=1836256482]
+position = Vector2(0, 24)
+script = ExtResource("3_exd8k")
+rect = Rect2(0, 0, 32, 4)
+base_color = Color(0.2643559, 0.16143405, 0, 1)
+fill_color = Color(1, 1, 0.19607843, 1)
+metadata/_custom_type_script = "uid://wawymuwe6cc4"
