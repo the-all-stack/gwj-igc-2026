@@ -53,7 +53,9 @@ func _physics_process(delta: float) -> void:
 	var is_sprinting := Input.is_action_pressed("sprint") && can_sprint
 	was_sprinting = is_sprinting
 	
-	if is_sprinting:
+	var move_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	
+	if is_sprinting && move_input != Vector2.ZERO:
 		stamina = maxf(0, stamina - stamina_usage_rate * delta)
 		stamina_regen_delay_timer = stamina_regen_delay
 	elif stamina_regen_delay_timer > 0:
@@ -62,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		stamina = minf(max_stamina, stamina + stamina_regen_rate * delta)
 	
 	var speed := sprint_speed if is_sprinting else base_speed
-	velocity = Input.get_vector("move_left", "move_right", "move_up", "move_down") * speed * Game.tile_size
+	velocity = move_input * speed * Game.tile_size
 	move_and_slide()
 
 func update_stamina_bar() -> void:
