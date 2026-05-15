@@ -22,11 +22,86 @@ position = Vector2(352, -176)
 [node name="Civilian3" parent="2D" parent_id_path=PackedInt32Array(368160257) index="6" unique_id=496159771 instance=ExtResource("3_ckvl4")]
 position = Vector2(352, -112)
 
-[node name="Civilian4" parent="2D" parent_id_path=PackedInt32Array(368160257) index="7" unique_id=728471185 instance=ExtResource("3_ckvl4")]
+[node name="Civilian6" parent="2D" parent_id_path=PackedInt32Array(368160257) index="7" unique_id=557041747 instance=ExtResource("3_ckvl4")]
 position = Vector2(272, -208)
 
 [node name="Civilian5" parent="2D" parent_id_path=PackedInt32Array(368160257) index="8" unique_id=250978755 instance=ExtResource("3_ckvl4")]
 position = Vector2(240, -112)
+
+[node name="Civilian4" parent="2D" parent_id_path=PackedInt32Array(368160257) index="9" unique_id=11283293 instance=ExtResource("3_ckvl4")]
+position = Vector2(352, 176)
+
+[node name="Civilian7" parent="2D" parent_id_path=PackedInt32Array(368160257) index="10" unique_id=1016432499 instance=ExtResource("3_ckvl4")]
+position = Vector2(400, 144)
+
+[node name="Civilian8" parent="2D" parent_id_path=PackedInt32Array(368160257) index="11" unique_id=1456415237 instance=ExtResource("3_ckvl4")]
+position = Vector2(400, 208)
+
+[node name="Civilian9" parent="2D" parent_id_path=PackedInt32Array(368160257) index="12" unique_id=1678442857 instance=ExtResource("3_ckvl4")]
+position = Vector2(320, 112)
+
+[node name="Civilian10" parent="2D" parent_id_path=PackedInt32Array(368160257) index="13" unique_id=1237461514 instance=ExtResource("3_ckvl4")]
+position = Vector2(288, 208)
+
+[node name="Civilian11" parent="2D" parent_id_path=PackedInt32Array(368160257) index="14" unique_id=1662205120 instance=ExtResource("3_ckvl4")]
+position = Vector2(-16, -160)
+
+[node name="Civilian12" parent="2D" parent_id_path=PackedInt32Array(368160257) index="15" unique_id=485238283 instance=ExtResource("3_ckvl4")]
+position = Vector2(32, -192)
+
+[node name="Civilian13" parent="2D" parent_id_path=PackedInt32Array(368160257) index="16" unique_id=1778668830 instance=ExtResource("3_ckvl4")]
+position = Vector2(32, -128)
+
+[node name="Civilian14" parent="2D" parent_id_path=PackedInt32Array(368160257) index="17" unique_id=838799452 instance=ExtResource("3_ckvl4")]
+position = Vector2(-48, -224)
+
+[node name="Civilian15" parent="2D" parent_id_path=PackedInt32Array(368160257) index="18" unique_id=502931606 instance=ExtResource("3_ckvl4")]
+position = Vector2(-80, -128)
+
+[node name="Civilian16" parent="2D" parent_id_path=PackedInt32Array(368160257) index="19" unique_id=1240255922 instance=ExtResource("3_ckvl4")]
+position = Vector2(-384, 176)
+
+[node name="Civilian17" parent="2D" parent_id_path=PackedInt32Array(368160257) index="20" unique_id=1380052225 instance=ExtResource("3_ckvl4")]
+position = Vector2(-336, 144)
+
+[node name="Civilian18" parent="2D" parent_id_path=PackedInt32Array(368160257) index="21" unique_id=737735071 instance=ExtResource("3_ckvl4")]
+position = Vector2(-336, 208)
+
+[node name="Civilian19" parent="2D" parent_id_path=PackedInt32Array(368160257) index="22" unique_id=387553770 instance=ExtResource("3_ckvl4")]
+position = Vector2(-416, 112)
+
+[node name="Civilian20" parent="2D" parent_id_path=PackedInt32Array(368160257) index="23" unique_id=121823078 instance=ExtResource("3_ckvl4")]
+position = Vector2(-448, 208)
+
+[node name="Civilian21" parent="2D" parent_id_path=PackedInt32Array(368160257) index="24" unique_id=230551408 instance=ExtResource("3_ckvl4")]
+position = Vector2(-352, -176)
+
+[node name="Civilian22" parent="2D" parent_id_path=PackedInt32Array(368160257) index="25" unique_id=1875840715 instance=ExtResource("3_ckvl4")]
+position = Vector2(-304, -208)
+
+[node name="Civilian23" parent="2D" parent_id_path=PackedInt32Array(368160257) index="26" unique_id=1666342376 instance=ExtResource("3_ckvl4")]
+position = Vector2(-304, -144)
+
+[node name="Civilian24" parent="2D" parent_id_path=PackedInt32Array(368160257) index="27" unique_id=1052074867 instance=ExtResource("3_ckvl4")]
+position = Vector2(-384, -240)
+
+[node name="Civilian25" parent="2D" parent_id_path=PackedInt32Array(368160257) index="28" unique_id=320179197 instance=ExtResource("3_ckvl4")]
+position = Vector2(-416, -144)
+
+[node name="Civilian26" parent="2D" parent_id_path=PackedInt32Array(368160257) index="29" unique_id=1916897617 instance=ExtResource("3_ckvl4")]
+position = Vector2(16, 192)
+
+[node name="Civilian27" parent="2D" parent_id_path=PackedInt32Array(368160257) index="30" unique_id=1192858704 instance=ExtResource("3_ckvl4")]
+position = Vector2(64, 160)
+
+[node name="Civilian28" parent="2D" parent_id_path=PackedInt32Array(368160257) index="31" unique_id=872330614 instance=ExtResource("3_ckvl4")]
+position = Vector2(64, 224)
+
+[node name="Civilian29" parent="2D" parent_id_path=PackedInt32Array(368160257) index="32" unique_id=1101363767 instance=ExtResource("3_ckvl4")]
+position = Vector2(-16, 128)
+
+[node name="Civilian30" parent="2D" parent_id_path=PackedInt32Array(368160257) index="33" unique_id=1468368455 instance=ExtResource("3_ckvl4")]
+position = Vector2(-48, 224)
 
 [node name="GameOverScreen" parent="UI" parent_id_path=PackedInt32Array(1642803358) index="0" unique_id=660359113]
 layout_mode = 1

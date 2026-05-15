@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	
 	var civilians_nearby := 0
 	for civilian: Civilian in get_tree().get_nodes_in_group("civilians"):
-		if global_position.distance_to(civilian.global_position) <= base_size_static:
+		if global_position.distance_to(civilian.global_position) <= base_size_static * Game.tile_size * 0.5:
 			civilians_nearby += 1
 	
 	if global_position.distance_to(Player.instance.global_position) <= current_size * Game.tile_size * 0.5:
