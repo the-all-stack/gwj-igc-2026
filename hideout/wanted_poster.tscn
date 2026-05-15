@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://cxy1aywwc8tc2"]
 
 [ext_resource type="Script" uid="uid://b3ukwkw8pqv3u" path="res://hideout/wanted_poster.gd" id="1_dhlis"]
-[ext_resource type="PackedScene" uid="uid://5dac6j87f7qo" path="res://stages/test_stage.tscn" id="2_oovsi"]
 
 [node name="WantedPoster" type="Button" unique_id=276518641]
 offset_right = 80.0
 offset_bottom = 120.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_dhlis")
-stage_scene = ExtResource("2_oovsi")
+stage_scene = "uid://5dac6j87f7qo"
 metadata/_custom_type_script = "uid://b3ukwkw8pqv3u"

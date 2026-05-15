@@ -16,7 +16,6 @@ point_count = 5
 [node name="Guard" type="Node2D" unique_id=1260593566]
 script = ExtResource("1_lcryj")
 patrol_speed = 2.0
-patrol_snap_distance = 0.01
 chase_speed = 4.0
 catch_distance = 0.5
 cone_color_unseen = Color(1, 0, 0, 0.3137255)

@@ -8,7 +8,6 @@ class_name Guard extends Node2D
 
 @export_category("Movement")
 @export var patrol_speed: float
-@export var patrol_snap_distance: float
 @export var chase_speed: float
 @export var catch_distance: float
 
@@ -63,19 +62,21 @@ func face_toward_target(target: Vector2) -> void:
 	cone.global_rotation = (target - body.global_position).angle()
 
 func chase(delta: float) -> void:
-	var target_position := cone.seen_player.position if cone.seen_player else last_known_player_position
+	var target_position := cone.seen_player.global_position if cone.seen_player else last_known_player_position
 
 	navigate_toward_target(target_position, chase_speed, delta, false)
 	face_toward_target(target_position)
 
-	if body.global_position.distance_to(target_position) <= catch_distance:
+	if cone.seen_player && body.global_position.distance_to(cone.seen_player.global_position) <= catch_distance * Game.tile_size:
+		Stage.instance.game_over()
+	elif !cone.seen_player && body.global_position.distance_to(last_known_player_position) < 0.01:
 		is_chasing_player = false
 		is_returning_to_patrol = true
 
 func return_to_patrol(delta: float) -> void:
 	navigate_toward_target(follow.global_position, patrol_speed, delta, true)
 
-	if body.global_position.distance_to(follow.global_position) <= patrol_snap_distance:
+	if body.global_position.distance_to(follow.global_position) <= 0.01:
 		is_returning_to_patrol = false
 
 func patrol(delta: float) -> void:

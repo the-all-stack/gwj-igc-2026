@@ -38,10 +38,13 @@ func _ready() -> void:
 	tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC)
 	tween.tween_property(self, "current_size", base_size, resize_delay)
 
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
-
+	
+	if global_position.distance_to(Player.instance.global_position) < current_size * Game.tile_size * 0.5:
+		Stage.instance.game_over()
+	
 	if move_timer > 0:
 		move_timer -= delta
 	else:

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://co17pbyq6coj6"]
+
+[ext_resource type="Script" uid="uid://lunduxj11i3l" path="res://screens/game_over_screen.gd" id="1_4axnr"]
+
+[sub_resource type="Theme" id="Theme_det6b"]
+Button/font_sizes/font_size = 24
+
+[node name="GameOverScreen" type="ColorRect" unique_id=660359113]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.67058825, 0, 0.05882353, 0.5764706)
+script = ExtResource("1_4axnr")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=309734129]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1123733282]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83137256, 0, 0.09019608, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 64
+text = "Game Over"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=948128547]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_det6b")
+theme_override_constants/separation = 10
+
+[node name="RestartButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=1241398349]
+layout_mode = 2
+text = "Restart Stage"
+
+[node name="HideoutButton" type="Button" parent="VBoxContainer/VBoxContainer" unique_id=223176596]
+layout_mode = 2
+text = "Back to Hideout"
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/RestartButton" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/HideoutButton" to="." method="_on_hideout_button_pressed"]
