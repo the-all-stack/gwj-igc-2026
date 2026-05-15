@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cvr542ypnx17m"]
+
+[ext_resource type="Script" uid="uid://uplhjkey6v55" path="res://characters/civilian/civilian.gd" id="1_i8w28"]
+[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_3ulh2"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i8w28"]
+radius = 4.0
+
+[node name="Civilian" type="CharacterBody2D" unique_id=1443269948 groups=["civilians"]]
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_i8w28")
+metadata/_custom_type_script = "uid://uplhjkey6v55"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748768134]
+shape = SubResource("CircleShape2D_i8w28")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1668481711]
+texture = ExtResource("2_3ulh2")

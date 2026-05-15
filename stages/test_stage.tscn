@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://5dac6j87f7qo"]
 
 [ext_resource type="PackedScene" uid="uid://b5ahv2wcmdttl" path="res://stages/base_stage.tscn" id="1_dywvm"]
+[ext_resource type="PackedScene" uid="uid://cvr542ypnx17m" path="res://characters/civilian/civilian.tscn" id="3_ckvl4"]
 [ext_resource type="PackedScene" uid="uid://biq3wpw5eyc7d" path="res://characters/guard/guard.tscn" id="3_hh1an"]
 [ext_resource type="PackedScene" uid="uid://bw5mh02bjmjbo" path="res://characters/bounty_hunter/bounty_hunter.tscn" id="3_pu20y"]
 
@@ -11,6 +12,21 @@ tile_map_data = PackedByteArray("AAD6//7/AQABAAAAAAD6//v/AQAAAAAAAAD6//r/AQAAAAA
 
 [node name="Guard" parent="2D" parent_id_path=PackedInt32Array(368160257) index="3" unique_id=1260593566 instance=ExtResource("3_hh1an")]
 position = Vector2(-352, 96)
+
+[node name="Civilian" parent="2D" parent_id_path=PackedInt32Array(368160257) index="4" unique_id=1443269948 instance=ExtResource("3_ckvl4")]
+position = Vector2(304, -144)
+
+[node name="Civilian2" parent="2D" parent_id_path=PackedInt32Array(368160257) index="5" unique_id=1629138873 instance=ExtResource("3_ckvl4")]
+position = Vector2(352, -176)
+
+[node name="Civilian3" parent="2D" parent_id_path=PackedInt32Array(368160257) index="6" unique_id=496159771 instance=ExtResource("3_ckvl4")]
+position = Vector2(352, -112)
+
+[node name="Civilian4" parent="2D" parent_id_path=PackedInt32Array(368160257) index="7" unique_id=728471185 instance=ExtResource("3_ckvl4")]
+position = Vector2(272, -208)
+
+[node name="Civilian5" parent="2D" parent_id_path=PackedInt32Array(368160257) index="8" unique_id=250978755 instance=ExtResource("3_ckvl4")]
+position = Vector2(240, -112)
 
 [node name="GameOverScreen" parent="UI" parent_id_path=PackedInt32Array(1642803358) index="0" unique_id=660359113]
 layout_mode = 1

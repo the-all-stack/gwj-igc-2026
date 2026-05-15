@@ -1,0 +1,1 @@
+class_name Civilian extends CharacterBody2D
