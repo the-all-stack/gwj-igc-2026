@@ -18,6 +18,7 @@ script = ExtResource("1_lcryj")
 patrol_speed = 2.0
 chase_speed = 4.0
 catch_distance = 0.5
+turn_speed = 180.0
 cone_color_unseen = Color(1, 0, 0, 0.3137255)
 cone_color_seen = Color(1, 0, 0, 0.47058824)
 metadata/_custom_type_script = "uid://b3ih3jqlceu64"

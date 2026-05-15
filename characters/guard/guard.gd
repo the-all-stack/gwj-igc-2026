@@ -6,10 +6,11 @@ class_name Guard extends Node2D
 @onready var path: Path2D = $Path2D
 @onready var follow: PathFollow2D = $Path2D/PathFollow2D
 
-@export_category("Movement")
+@export_category("Mechanics")
 @export var patrol_speed: float
 @export var chase_speed: float
 @export var catch_distance: float
+@export var turn_speed: float
 
 @export_category("Visuals")
 @export var cone_color_unseen: Color:
@@ -56,16 +57,19 @@ func navigate_toward_target(target: Vector2, speed: float, delta: float, face_to
 		speed_budget = move_toward_target(path[next_node_index], speed_budget, delta)
 
 	if face_toward_node:
-		face_toward_target(path[next_node_index])
+		face_toward_target(path[next_node_index], delta)
 
-func face_toward_target(target: Vector2) -> void:
-	cone.global_rotation = (target - body.global_position).angle()
+func face_toward_target(target: Vector2, delta: float) -> void:
+	align_with_rotation((target - body.global_position).angle(), delta)
+
+func align_with_rotation(angle: float, delta: float) -> void:
+	cone.global_rotation = rotate_toward(cone.global_rotation, angle, deg_to_rad(turn_speed) * delta)
 
 func chase(delta: float) -> void:
 	var target_position := cone.seen_player.global_position if cone.seen_player else last_known_player_position
 
 	navigate_toward_target(target_position, chase_speed, delta, false)
-	face_toward_target(target_position)
+	face_toward_target(target_position, delta)
 
 	if cone.seen_player && body.global_position.distance_to(cone.seen_player.global_position) <= catch_distance * Game.tile_size:
 		Stage.instance.game_over()
@@ -82,7 +86,7 @@ func return_to_patrol(delta: float) -> void:
 func patrol(delta: float) -> void:
 	follow.progress += patrol_speed * Game.tile_size * delta
 	body.global_position = follow.global_position
-	cone.global_rotation = follow.global_rotation
+	align_with_rotation(follow.global_rotation, delta)
 
 func _on_vision_cone_player_entered(player: Player) -> void:
 	is_chasing_player = true
