@@ -30,7 +30,7 @@ var stamina: float:
 		stamina = value
 		update_stamina_bar()
 var stamina_regen_delay_timer: float
-var was_sprinting: bool
+var is_exhausted: bool
 
 static var instance: Player
 
@@ -47,21 +47,23 @@ func _physics_process(delta: float) -> void:
 	if Engine.is_editor_hint():
 		return
 	
-	var can_sprint := stamina > 0 && (stamina > min_stamina_to_start_sprinting || was_sprinting)
+	var can_sprint := stamina > 0 && !is_exhausted
 	stamina_bar.fill_color = stamina_bar_enabled_fill_color if can_sprint else stamina_bar_disabled_fill_color
 	
-	var is_sprinting := Input.is_action_pressed("sprint") && can_sprint
-	was_sprinting = is_sprinting
-	
 	var move_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	var is_sprinting := Input.is_action_pressed("sprint") && can_sprint && move_input != Vector2.ZERO
 	
-	if is_sprinting && move_input != Vector2.ZERO:
+	if is_sprinting:
 		stamina = maxf(0, stamina - stamina_usage_rate * delta)
 		stamina_regen_delay_timer = stamina_regen_delay
+		if stamina <= 0:
+			is_exhausted = true
 	elif stamina_regen_delay_timer > 0:
 		stamina_regen_delay_timer = maxf(0, stamina_regen_delay_timer - delta)
 	else:
 		stamina = minf(max_stamina, stamina + stamina_regen_rate * delta)
+		if stamina >= min_stamina_to_start_sprinting:
+			is_exhausted = false
 	
 	var speed := sprint_speed if is_sprinting else base_speed
 	velocity = move_input * speed * Game.tile_size
