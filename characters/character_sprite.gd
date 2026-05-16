@@ -27,4 +27,5 @@ func set_direction_from_angle(angle: float) -> void:
 	direction = directions[roundi(fposmod(rad_to_deg(angle), 360.0) / 45.0) % directions.size()]
 
 func update_animation() -> void:
-	play(state + "_" + direction)
+	if state && direction:
+		play(state + "_" + direction)

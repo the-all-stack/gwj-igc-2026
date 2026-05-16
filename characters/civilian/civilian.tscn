@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://cvr542ypnx17m"]
 
 [ext_resource type="Script" uid="uid://uplhjkey6v55" path="res://characters/civilian/civilian.gd" id="1_i8w28"]
-[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_3ulh2"]
+[ext_resource type="SpriteFrames" uid="uid://dp3135bp75j67" path="res://assets/sprites/citizen_01/citizen_01_sprite_frames.tres" id="2_3ulh2"]
+[ext_resource type="Script" uid="uid://dg34fqa5v6hqr" path="res://characters/character_sprite.gd" id="2_i8w28"]
+[ext_resource type="SpriteFrames" uid="uid://dl3302s7j81cr" path="res://assets/sprites/citizen_02/citizen_02_sprite_frames.tres" id="3_n728d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i8w28"]
 radius = 4.0
@@ -10,10 +12,17 @@ radius = 4.0
 collision_mask = 2
 motion_mode = 1
 script = ExtResource("1_i8w28")
+varieties = Array[SpriteFrames]([ExtResource("2_3ulh2"), ExtResource("3_n728d")])
+max_shift = 0.2
 metadata/_custom_type_script = "uid://uplhjkey6v55"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1748768134]
 shape = SubResource("CircleShape2D_i8w28")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1668481711]
-texture = ExtResource("2_3ulh2")
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=550134215]
+sprite_frames = ExtResource("2_3ulh2")
+animation = &"idle_s"
+script = ExtResource("2_i8w28")
+state = "idle"
+direction = "s"
+metadata/_custom_type_script = "uid://dg34fqa5v6hqr"
