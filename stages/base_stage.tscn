@@ -28,6 +28,9 @@ tile_set = ExtResource("2_r1ki2")
 [node name="VisualMapLayer2" type="TileMapLayer" parent="2D" unique_id=1887380702]
 tile_set = ExtResource("2_r1ki2")
 
+[node name="VisualMapLayer3" type="TileMapLayer" parent="2D" unique_id=1261637671]
+tile_set = ExtResource("2_r1ki2")
+
 [node name="Objects" type="Node2D" parent="2D" unique_id=274317131]
 y_sort_enabled = true
 
@@ -41,6 +44,7 @@ position = Vector2(168, 0)
 
 [node name="UI" type="Control" parent="." unique_id=1642803358]
 process_mode = 3
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

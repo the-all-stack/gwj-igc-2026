@@ -7,5 +7,5 @@ offset_right = 80.0
 offset_bottom = 120.0
 pivot_offset_ratio = Vector2(0.5, 0.5)
 script = ExtResource("1_dhlis")
-stage_scene = "uid://5dac6j87f7qo"
+stage_scene = "uid://b4yo72tdxqpsm"
 metadata/_custom_type_script = "uid://b3ukwkw8pqv3u"
