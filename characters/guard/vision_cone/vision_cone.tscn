@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7voyp2jo8ud1" path="res://characters/guard/vision_cone/vision_cone.gd" id="1_xprlb"]
 
 [node name="VisionCone" type="Node2D" unique_id=2002066581]
+z_index = 1
 script = ExtResource("1_xprlb")
 color = Color(1, 0, 0, 0.39215687)
 angle = 60.0

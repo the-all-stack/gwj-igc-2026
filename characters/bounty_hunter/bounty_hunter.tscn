@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://divdhjalnotud" path="res://characters/bounty_hunter/bounty_hunter.gd" id="1_chn1h"]
 
 [node name="BountyHunter" type="Node2D" unique_id=670589263]
+z_index = 1
 script = ExtResource("1_chn1h")
 color = Color(1, 0, 0, 0.39215687)
 move_interval_low = 5.0

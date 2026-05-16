@@ -26,7 +26,13 @@ tile_set = ExtResource("2_r1ki2")
 [node name="VisualMapLayer2" type="TileMapLayer" parent="2D" unique_id=1887380702]
 tile_set = ExtResource("2_r1ki2")
 
-[node name="Player" parent="2D" unique_id=276129182 instance=ExtResource("2_i6edt")]
+[node name="Characters" type="Node2D" parent="2D" unique_id=274317131]
+y_sort_enabled = true
+
+[node name="Player" parent="2D/Characters" unique_id=276129182 instance=ExtResource("2_i6edt")]
+
+[node name="Civilians" type="Node2D" parent="2D/Characters" unique_id=514604729]
+y_sort_enabled = true
 
 [node name="UI" type="Control" parent="." unique_id=1642803358]
 process_mode = 3
