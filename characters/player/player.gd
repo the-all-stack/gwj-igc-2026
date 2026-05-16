@@ -2,6 +2,7 @@
 class_name Player extends CharacterBody2D
 
 @onready var stamina_bar: StaminaBar = $StaminaBar
+@onready var sprite: CharacterSprite = $CharacterSprite
 
 @export_category("Speed")
 @export var base_speed: float
@@ -52,6 +53,9 @@ func _physics_process(delta: float) -> void:
 	
 	var move_input := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var is_sprinting := Input.is_action_pressed("sprint") && can_sprint && move_input != Vector2.ZERO
+	
+	sprite.state = "idle" if move_input == Vector2.ZERO else ("run" if is_sprinting else "walk")
+	sprite.set_direction_from_vector(move_input)
 	
 	if is_sprinting:
 		stamina = maxf(0, stamina - stamina_usage_rate * delta)

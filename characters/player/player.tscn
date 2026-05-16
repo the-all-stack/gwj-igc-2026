@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://dj6p1ahuemyrc"]
 
 [ext_resource type="Script" uid="uid://crv6hoyc4fpsu" path="res://characters/player/player.gd" id="1_rkbax"]
-[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_xxgcw"]
+[ext_resource type="SpriteFrames" uid="uid://bfbgc0bicrl45" path="res://assets/sprites/change/change_sprite_frames.tres" id="2_exd8k"]
+[ext_resource type="Script" uid="uid://dg34fqa5v6hqr" path="res://characters/character_sprite.gd" id="3_5dc8e"]
 [ext_resource type="Script" uid="uid://wawymuwe6cc4" path="res://characters/player/stamina_bar.gd" id="3_exd8k"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w0uf1"]
@@ -26,11 +27,18 @@ metadata/_custom_type_script = "uid://crv6hoyc4fpsu"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1219478331]
 shape = SubResource("CircleShape2D_w0uf1")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1581721086]
-texture = ExtResource("2_xxgcw")
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="." unique_id=860438797]
+sprite_frames = ExtResource("2_exd8k")
+animation = &"idle_s"
+frame = 20
+frame_progress = 0.9573137
+script = ExtResource("3_5dc8e")
+state = "idle"
+direction = "s"
+metadata/_custom_type_script = "uid://dg34fqa5v6hqr"
 
 [node name="StaminaBar" type="Node2D" parent="." unique_id=1836256482]
-position = Vector2(0, 24)
+position = Vector2(0, 16)
 script = ExtResource("3_exd8k")
 rect = Rect2(0, 0, 32, 4)
 base_color = Color(0.2643559, 0.16143405, 0, 1)
