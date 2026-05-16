@@ -1,5 +1,32 @@
 [gd_scene format=3 uid="uid://b4yo72tdxqpsm"]
 
 [ext_resource type="PackedScene" uid="uid://b5ahv2wcmdttl" path="res://stages/base_stage.tscn" id="1_dywvm"]
+[ext_resource type="PackedScene" uid="uid://cvr542ypnx17m" path="res://characters/civilian/civilian.tscn" id="3_ckvl4"]
+[ext_resource type="PackedScene" uid="uid://biq3wpw5eyc7d" path="res://characters/guard/guard.tscn" id="3_hh1an"]
+[ext_resource type="PackedScene" uid="uid://bw5mh02bjmjbo" path="res://characters/bounty_hunter/bounty_hunter.tscn" id="3_pu20y"]
 
 [node name="Stage" unique_id=1459536729 instance=ExtResource("1_dywvm")]
+
+[node name="Civilian" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="0" unique_id=1443269948 instance=ExtResource("3_ckvl4")]
+position = Vector2(-72, 88)
+
+[node name="Civilian2" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="1" unique_id=750975884 instance=ExtResource("3_ckvl4")]
+position = Vector2(-160, 8)
+
+[node name="Civilian3" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="2" unique_id=134715227 instance=ExtResource("3_ckvl4")]
+position = Vector2(-72, -96)
+
+[node name="Civilian4" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="3" unique_id=993716167 instance=ExtResource("3_ckvl4")]
+position = Vector2(184, -8)
+
+[node name="Civilian5" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="4" unique_id=730112947 instance=ExtResource("3_ckvl4")]
+position = Vector2(88, 104)
+
+[node name="Civilian6" parent="2D/Objects/Civilians" parent_id_path=PackedInt32Array(514604729) index="5" unique_id=319647542 instance=ExtResource("3_ckvl4")]
+position = Vector2(88, 104)
+
+[node name="Guard" parent="2D/Objects" parent_id_path=PackedInt32Array(274317131) index="3" unique_id=1260593566 instance=ExtResource("3_hh1an")]
+position = Vector2(-312, 128)
+
+[node name="BountyHunter" parent="2D/Objects" parent_id_path=PackedInt32Array(274317131) index="4" unique_id=670589263 instance=ExtResource("3_pu20y")]
+position = Vector2(328, -136)
