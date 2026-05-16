@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://biq3wpw5eyc7d"]
 
 [ext_resource type="Script" uid="uid://b3ih3jqlceu64" path="res://characters/guard/guard.gd" id="1_lcryj"]
-[ext_resource type="Texture2D" uid="uid://1tfkkbn1kdy5" path="res://characters/stickmin.tres" id="2_di0wq"]
+[ext_resource type="SpriteFrames" uid="uid://b0lrlo7byiu7n" path="res://assets/sprites/guard/guard_sprite_frames.tres" id="2_di0wq"]
+[ext_resource type="Script" uid="uid://dg34fqa5v6hqr" path="res://characters/character_sprite.gd" id="2_lcryj"]
 [ext_resource type="PackedScene" uid="uid://drs6duajjawyj" path="res://characters/guard/vision_cone/vision_cone.tscn" id="3_gdqd5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hh1an"]
@@ -26,8 +27,13 @@ metadata/_custom_type_script = "uid://b3ih3jqlceu64"
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1658555094]
 collision_mask = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=840380114]
-texture = ExtResource("2_di0wq")
+[node name="CharacterSprite" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=98944837]
+sprite_frames = ExtResource("2_di0wq")
+animation = &"idle_s"
+script = ExtResource("2_lcryj")
+state = "idle"
+direction = "s"
+metadata/_custom_type_script = "uid://dg34fqa5v6hqr"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1263337751]
 shape = SubResource("CircleShape2D_hh1an")

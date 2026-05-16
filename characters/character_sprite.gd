@@ -20,9 +20,11 @@ func _ready() -> void:
 	update_animation()
 
 func set_direction_from_vector(vector: Vector2) -> void:
-	if vector == Vector2.ZERO:
-		return
-	direction = directions[roundi(fposmod(rad_to_deg(vector.angle()), 360.0) / 45.0) % directions.size()]
+	if vector != Vector2.ZERO:
+		set_direction_from_angle(vector.angle())
+
+func set_direction_from_angle(angle: float) -> void:
+	direction = directions[roundi(fposmod(rad_to_deg(angle), 360.0) / 45.0) % directions.size()]
 
 func update_animation() -> void:
 	play(state + "_" + direction)

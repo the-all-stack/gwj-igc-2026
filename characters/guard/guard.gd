@@ -5,6 +5,7 @@ class_name Guard extends Node2D
 @onready var cone: VisionCone = $CharacterBody2D/VisionCone
 @onready var path: Path2D = $Path2D
 @onready var follow: PathFollow2D = $Path2D/PathFollow2D
+@onready var sprite: CharacterSprite = $CharacterBody2D/CharacterSprite
 
 @export_category("Mechanics")
 @export var patrol_speed: float
@@ -29,10 +30,13 @@ func _physics_process(delta: float) -> void:
 		return
 	
 	if is_chasing_player:
+		sprite.state = "run"
 		chase(delta)
 	elif is_returning_to_patrol:
+		sprite.state = "walk"
 		return_to_patrol(delta)
 	else:
+		sprite.state = "walk"
 		patrol(delta)
 
 ## Moves towards the target and returns the remaining speed budget.
@@ -64,6 +68,7 @@ func face_toward_target(target: Vector2, delta: float) -> void:
 
 func align_with_rotation(angle: float, delta: float) -> void:
 	cone.global_rotation = rotate_toward(cone.global_rotation, angle, deg_to_rad(turn_speed) * delta)
+	sprite.set_direction_from_angle(angle)
 
 func chase(delta: float) -> void:
 	var target_position := cone.seen_player.global_position if cone.seen_player else last_known_player_position
