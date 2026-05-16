@@ -60,5 +60,3 @@ grow_vertical = 1
 [node name="AlarmScreen" parent="UI" unique_id=2085469021 instance=ExtResource("6_d77hg")]
 visible = false
 layout_mode = 1
-start_color = Color(1, 0.19607843, 0.19607843, 0.078431375)
-end_color = Color(1, 0.19607843, 0.19607843, 0.19607843)

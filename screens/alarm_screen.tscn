@@ -10,8 +10,8 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0.19607843, 0.19607843, 0)
 script = ExtResource("1_34jhg")
-start_color = Color(1, 0.19607843, 0.19607843, 0)
-end_color = Color(1, 0.19607843, 0.19607843, 0.39215687)
+start_color = Color(1, 0.19607843, 0.19607843, 0.078431375)
+end_color = Color(1, 0.19607843, 0.19607843, 0.19607843)
 color_interval = 0.5
 metadata/_custom_type_script = "uid://dafte72ysji1s"
 
