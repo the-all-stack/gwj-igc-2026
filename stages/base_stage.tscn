@@ -3,7 +3,9 @@
 [ext_resource type="Script" uid="uid://d2sowjjmo1g33" path="res://stages/stage.gd" id="1_i6edt"]
 [ext_resource type="PackedScene" uid="uid://dj6p1ahuemyrc" path="res://characters/player/player.tscn" id="2_i6edt"]
 [ext_resource type="TileSet" uid="uid://bry0jy4v6kuus" path="res://assets/tilesets/tile_set_01.tres" id="2_r1ki2"]
+[ext_resource type="PackedScene" uid="uid://ps85mntallts" path="res://objective/objective.tscn" id="4_r1ki2"]
 [ext_resource type="PackedScene" uid="uid://co17pbyq6coj6" path="res://screens/game_over_screen.tscn" id="5_r1ki2"]
+[ext_resource type="PackedScene" uid="uid://clakdddoyo1d4" path="res://screens/alarm_screen.tscn" id="6_d77hg"]
 
 [node name="Stage" type="Node" unique_id=1459536729]
 script = ExtResource("1_i6edt")
@@ -26,13 +28,16 @@ tile_set = ExtResource("2_r1ki2")
 [node name="VisualMapLayer2" type="TileMapLayer" parent="2D" unique_id=1887380702]
 tile_set = ExtResource("2_r1ki2")
 
-[node name="Characters" type="Node2D" parent="2D" unique_id=274317131]
+[node name="Objects" type="Node2D" parent="2D" unique_id=274317131]
 y_sort_enabled = true
 
-[node name="Player" parent="2D/Characters" unique_id=276129182 instance=ExtResource("2_i6edt")]
+[node name="Player" parent="2D/Objects" unique_id=276129182 instance=ExtResource("2_i6edt")]
 
-[node name="Civilians" type="Node2D" parent="2D/Characters" unique_id=514604729]
+[node name="Civilians" type="Node2D" parent="2D/Objects" unique_id=514604729]
 y_sort_enabled = true
+
+[node name="Objective" parent="2D/Objects" unique_id=1277949449 instance=ExtResource("4_r1ki2")]
+position = Vector2(168, 0)
 
 [node name="UI" type="Control" parent="." unique_id=1642803358]
 process_mode = 3
@@ -51,3 +56,9 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 grow_horizontal = 1
 grow_vertical = 1
+
+[node name="AlarmScreen" parent="UI" unique_id=2085469021 instance=ExtResource("6_d77hg")]
+visible = false
+layout_mode = 1
+start_color = Color(1, 0.19607843, 0.19607843, 0.078431375)
+end_color = Color(1, 0.19607843, 0.19607843, 0.19607843)

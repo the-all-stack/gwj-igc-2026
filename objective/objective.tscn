@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ps85mntallts"]
+
+[ext_resource type="Script" uid="uid://bov6k6hhdwi6l" path="res://objective/objective.gd" id="1_uf148"]
+[ext_resource type="Script" uid="uid://ysi87rnye4j3" path="res://objective/floating_animation.gd" id="2_kl5qs"]
+[ext_resource type="Texture2D" uid="uid://d12msug6ljwgj" path="res://objective/diamond.png" id="2_krivu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_krivu"]
+
+[node name="Objective" type="Area2D" unique_id=1277949449]
+collision_layer = 0
+collision_mask = 4
+input_pickable = false
+script = ExtResource("1_uf148")
+metadata/_custom_type_script = "uid://bov6k6hhdwi6l"
+
+[node name="FloatingAnimation" type="Node2D" parent="." unique_id=1966470838]
+script = ExtResource("2_kl5qs")
+floating_strength = 5.0
+floating_speed = 1.0
+metadata/_custom_type_script = "uid://ysi87rnye4j3"
+
+[node name="Sprite2D" type="Sprite2D" parent="FloatingAnimation" unique_id=591782635]
+texture = ExtResource("2_krivu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=146722442]
+shape = SubResource("CircleShape2D_krivu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
